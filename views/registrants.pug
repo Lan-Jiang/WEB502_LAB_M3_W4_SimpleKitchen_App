@@ -1,9 +1,12 @@
-extends layout
+doctype html
+head
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap")
+  link(rel='stylesheet', href='/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/css/styles.css') 
 
-block content
-
+body
     if registrations.length
-        table.listing-table.table-dark.table-striped
+        table.listing-table.table-light
             tr
                 th Name
                 th Email
