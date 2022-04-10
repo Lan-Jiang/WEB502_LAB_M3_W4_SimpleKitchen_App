@@ -30,7 +30,10 @@ router.get('/registrants', basic.check((req, res) => {
     });
 }));
 
-// add thank you page 
+router.get("/thankyou", (req, res) => {
+  //res.send('It works!');
+  res.render("thankyou", { title: "Thank You Page" });
+});
 
 router.post('/', 
     [
@@ -48,10 +51,11 @@ router.post('/',
           const registration = new Registration(req.body);
           registration.save()
             .then(() => {res.render('thankyou', { 
-              title: 'Thank you',                
+              title: 'Thank you Page',                
               errors: errors.array(),
               data: req.body 
-            });})
+              });
+            })
             .catch((err) => {
               console.log(err);
               res.send('Sorry! Something went wrong.');
