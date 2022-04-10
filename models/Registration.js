@@ -10,6 +10,14 @@ const registrationSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  username: {
+    type: String,
+    trim: true,
+  },
+  password: {
+    type: String,
+    trim: true,
+  },
 });
 
 module.exports = mongoose.model('Registration', registrationSchema);
